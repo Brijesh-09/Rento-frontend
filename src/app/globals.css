@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background:   36 25% 97%;
+    --foreground:   40 5% 11%;
+    --card:         36 30% 98%;
+    --card-foreground: 40 5% 11%;
+    --popover:      36 30% 98%;
+    --popover-foreground: 40 5% 11%;
+    --primary:      40 5% 11%;
+    --primary-foreground: 36 30% 97%;
+    --secondary:    36 20% 90%;
+    --secondary-foreground: 40 5% 25%;
+    --muted:        36 15% 93%;
+    --muted-foreground: 36 8% 52%;
+    --accent:       36 30% 87%;
+    --accent-foreground: 40 5% 11%;
+    --destructive:  0 72% 51%;
+    --destructive-foreground: 36 30% 97%;
+    --border:       36 15% 84%;
+    --input:        36 15% 84%;
+    --ring:         40 5% 11%;
+    --radius:       0.25rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; box-sizing: border-box; }
+  body {
+    background-color: #F7F4EF;
+    color: #1C1C1A;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: 'DM Serif Display', Georgia, serif; }
+
+  .fade-up   { animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) both; }
+  .fade-up-1 { animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.08s both; }
+  .fade-up-2 { animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.16s both; }
+  .fade-up-3 { animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.24s both; }
+  .fade-up-4 { animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.32s both; }
+  .fade-up-5 { animation: fadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.40s both; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .slide-in { animation: slideIn 0.4s cubic-bezier(0.22,1,0.36,1) both; }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Subtle grain overlay */
+  .grain::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
