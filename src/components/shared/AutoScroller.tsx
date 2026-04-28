@@ -1,63 +1,58 @@
 "use client";
+import { useRef, useEffect, ReactNode } from "react";
 
-import React, { useEffect, useRef } from "react";
+interface AutoScrollerProps {
+  children: ReactNode;
+  speed?: number; // pixels per second
+  className?: string;
+}
 
-export function AutoScroller({ children, className, speed = 30 }: { children: React.ReactNode; className?: string; speed?: number }) {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const isHoveredRef = useRef(false);
+export function AutoScroller({ children, speed = 40, className = "" }: AutoScrollerProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const raf = useRef<number>(0);
+  const paused = useRef(false);
+
   useEffect(() => {
-    const el = scrollRef.current;
-    let currentSpeed = speed;
+    const el = ref.current;
     if (!el) return;
 
-    let animationId: number;
-    let isHovered = false;
-    let lastTime = performance.now();
+    let last = 0;
+    const pxPerMs = speed / 1000;
 
-    const scroll = (time: number) => {
-      const dt = time - lastTime;
-      lastTime = time;
-
-      if (!isHovered && el && dt > 0) {
-        // Move scroll position based on time passed for smooth cross-device speed
-        const targetSpeed = isHoveredRef.current ? 0 : speed;
-        currentSpeed += (targetSpeed - currentSpeed) * 0.05;
-
-        el.scrollLeft += (currentSpeed * dt) / 1000;
-        // Reset to beginning when reaching the end
-        if (el.scrollLeft >= el.scrollWidth / 2) {
-          el.scrollLeft -= el.scrollWidth / 2;
+    function step(ts: number) {
+      if (!paused.current && el) {
+        const delta = ts - last;
+        el.scrollLeft += pxPerMs * delta;
+        // Reset to start for infinite feel
+        if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+          el.scrollLeft = 0;
         }
       }
-      animationId = requestAnimationFrame(scroll);
-    };
+      last = ts;
+      raf.current = requestAnimationFrame(step);
+    }
 
-    const handleMouseEnter = () => (isHoveredRef.current = true);
+    raf.current = requestAnimationFrame(step);
 
-    const handleMouseLeave = () => {
-      isHoveredRef.current = false;
-      lastTime = performance.now();
-    };
+    const pause  = () => { paused.current = true; };
+    const resume = () => { paused.current = false; };
 
-    el.addEventListener("mouseenter", handleMouseEnter);
-    el.addEventListener("mouseleave", handleMouseLeave);
-    el.addEventListener("touchstart", handleMouseEnter, { passive: true });
-    el.addEventListener("touchend", handleMouseLeave, { passive: true });
-
-    animationId = requestAnimationFrame(scroll);
+    el.addEventListener("mouseenter", pause);
+    el.addEventListener("mouseleave", resume);
+    el.addEventListener("touchstart", pause,  { passive: true });
+    el.addEventListener("touchend",   resume, { passive: true });
 
     return () => {
-      cancelAnimationFrame(animationId);
-      el.removeEventListener("mouseenter", handleMouseEnter);
-      el.removeEventListener("mouseleave", handleMouseLeave);
-      el.removeEventListener("touchstart", handleMouseEnter);
-      el.removeEventListener("touchend", handleMouseLeave);
+      cancelAnimationFrame(raf.current);
+      el.removeEventListener("mouseenter", pause);
+      el.removeEventListener("mouseleave", resume);
+      el.removeEventListener("touchstart", pause);
+      el.removeEventListener("touchend",   resume);
     };
   }, [speed]);
 
   return (
-    <div ref={scrollRef} className={className}>
-      {children}
+    <div ref={ref} className={className} style={{ overflowX: "auto", cursor: "grab" }}>
       {children}
     </div>
   );

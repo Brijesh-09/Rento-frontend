@@ -27,19 +27,27 @@ export function ProductCard({ product }: { product: Product }) {
   // Muted category-based background colors
   const bgColors = ["#EDE9E1", "#E8E4DC", "#EAE3D2", "#E5E0D8"];
   const bgColor = bgColors[product.name.charCodeAt(0) % bgColors.length];
+  const primaryImage = (product as any).imageUrls?.[0] ||
+    selectedVariant && (selectedVariant as any).imageUrls?.[0] || null;
 
   return (
     <div className="group flex flex-col" style={{ backgroundColor: "#FDFAF6" }}>
-      {/* Image placeholder */}
+      {/* Image */}
       <div className="relative overflow-hidden" style={{ backgroundColor: bgColor, aspectRatio: "4/3" }}>
-        <div className="absolute inset-0 flex items-center justify-center opacity-20">
-          <svg viewBox="0 0 80 60" fill="none" style={{ width: 80, height: 60, color: "#8A8680" }}>
-            <rect x="10" y="30" width="60" height="4" rx="1" fill="currentColor"/>
-            <rect x="15" y="10" width="50" height="20" rx="2" fill="currentColor"/>
-            <rect x="14" y="34" width="6" height="16" rx="1" fill="currentColor"/>
-            <rect x="60" y="34" width="6" height="16" rx="1" fill="currentColor"/>
-          </svg>
-        </div>
+        {primaryImage ? (
+          <img src={primaryImage} alt={product.name}
+            className="absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-105"
+            style={{ objectFit: "cover" }} />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center opacity-20">
+            <svg viewBox="0 0 80 60" fill="none" style={{ width: 80, height: 60, color: "#8A8680" }}>
+              <rect x="10" y="30" width="60" height="4" rx="1" fill="currentColor"/>
+              <rect x="15" y="10" width="50" height="20" rx="2" fill="currentColor"/>
+              <rect x="14" y="34" width="6" height="16" rx="1" fill="currentColor"/>
+              <rect x="60" y="34" width="6" height="16" rx="1" fill="currentColor"/>
+            </svg>
+          </div>
+        )}
         {product.category?.name && (
           <span className="absolute top-3 left-3 text-[9px] uppercase tracking-[0.12em] font-medium px-2 py-1"
             style={{ backgroundColor: "#F7F4EF", color: "#8A8680" }}>

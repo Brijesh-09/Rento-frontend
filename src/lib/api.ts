@@ -114,4 +114,24 @@ export const api = {
 
   // ── Seed ──────────────────────────────────────────────────────────────────
   seed: () => request<unknown>("/seed", { method: "POST" }),
+
+  // ── Upload ────────────────────────────────────────────────────────────────
+  upload: {
+    // Upload files — returns { urls: string[], count: number }
+    // NOTE: uses fetch directly (not the helper) because body is FormData
+    images: async (files: FileList | File[], folder = "products") => {
+      const form = new FormData();
+      Array.from(files).forEach((f) => form.append("images", f));
+      const res  = await fetch(`${BASE}/upload?folder=${folder}`, { method: "POST", body: form });
+      const json = await res.json();
+      if (!json.success) throw new Error(json.message || "Upload failed");
+      return json.data as { urls: string[]; count: number };
+    },
+    // Delete files from DO Spaces by URL
+    delete: (urls: string[]) =>
+      request<{ deleted: number }>("/upload", {
+        method: "DELETE",
+        body:   JSON.stringify({ urls }),
+      }),
+  },
 };
