@@ -1,10 +1,12 @@
 import { PublicNavbar } from "@/components/public/Navbar";
+import { FloatingCart } from "@/components/public/FloatingCart";
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
       <PublicNavbar />
       <main className="flex-1">{children}</main>
+      <FloatingCart />
       <footer className="border-t border-sand mt-20">
         <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
           <div>

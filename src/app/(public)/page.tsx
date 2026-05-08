@@ -263,15 +263,17 @@ export default async function HomePage() {
                       </div>
                       {/* Hover CTA */}
                       <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                        <Link href="/products"
+                        <Link href={`/products/${p.id}`}
                           className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-medium uppercase"
                           style={{ backgroundColor: "#1C1C1A", color: "#F7F4EF", letterSpacing: "0.08em" }}>
-                          Add to Quote
+                          View Details
                         </Link>
                       </div>
                     </div>
                     <div className="flex flex-col gap-1.5 p-4 flex-1" style={{ borderTop: "1px solid #EAE3D2" }}>
-                      <p className="text-sm font-medium leading-snug" style={{ color: "#1C1C1A" }}>{p.name}</p>
+                      <Link href={`/products/${p.id}`}>
+                        <p className="text-sm font-medium leading-snug hover:text-[#C8913A] transition-colors" style={{ color: "#1C1C1A" }}>{p.name}</p>
+                      </Link>
                       {p.description && (
                         <p className="text-xs line-clamp-2 leading-relaxed" style={{ color: "#8A8680" }}>{p.description}</p>
                       )}

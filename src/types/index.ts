@@ -12,6 +12,7 @@ export interface Product {
   description: string | null;
   categoryId: string;
   basePrice: number | null;
+  imageUrls: string[];
   createdAt: string;
   category?: Category;
   variants?: ProductVariant[];
@@ -24,6 +25,7 @@ export interface ProductVariant {
   color: string | null;
   dimensions: string | null;
   stock: number | null;
+  imageUrls: string[];
   createdAt: string;
 }
 
@@ -83,10 +85,11 @@ export interface Pagination {
 
 // Cart (client-side only — no DB, lives in localStorage)
 export interface CartItem {
-  productId: string;
-  productName: string;
-  variantId: string | null;
+  productId:    string;
+  productName:  string;
+  variantId:    string | null;
   variantLabel: string;
-  quantity: number;
-  basePrice: number | null;
+  quantity:     number;
+  basePrice:    number | null;
+  imageUrl?:    string | null;  // primary display image for cart preview
 }
