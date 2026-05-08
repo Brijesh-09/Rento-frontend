@@ -53,7 +53,7 @@ export default function AdminCategoriesPage() {
     <div className="space-y-5 fade-up">
       <div className="flex items-center justify-between">
         <div>
-          <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: "#1C1C1A" }}>Categories</h1>
+          <h1 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 28, color: "#1C1C1A" }}>Categories</h1>
           <p className="text-sm mt-1" style={{ color: "#8A8680" }}>{categories.length} total</p>
         </div>
         <button onClick={openNew}
@@ -102,7 +102,7 @@ export default function AdminCategoriesPage() {
       ) : categories.length === 0 ? (
         <div className="py-20 text-center" style={{ border: "1px dashed #D4C9B0" }}>
           <Tag style={{ width: 32, height: 32, color: "#D4C9B0", margin: "0 auto 12px" }} />
-          <p className="font-display" style={{ fontFamily: "'DM Serif Display', Georgia, serif", color: "#8A8680" }}>No categories yet</p>
+          <p className="font-display" style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", color: "#8A8680" }}>No categories yet</p>
         </div>
       ) : (
         <div style={{ border: "1px solid #EAE3D2" }}>

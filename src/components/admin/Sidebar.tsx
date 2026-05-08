@@ -18,7 +18,7 @@ export function AdminSidebar() {
     <aside className="flex h-full w-52 shrink-0 flex-col" style={{ backgroundColor: "#1C1C1A", borderRight: "1px solid #2E2E2B" }}>
       {/* Logo */}
       <div className="h-14 flex items-center px-5" style={{ borderBottom: "1px solid #2E2E2B" }}>
-        <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 20, color: "#F7F4EF", letterSpacing: "-0.02em" }}>
+        <span style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 20, color: "#F7F4EF", letterSpacing: "-0.02em" }}>
           FURNR
         </span>
         <span className="ml-2 text-[9px] uppercase tracking-widest" style={{ color: "#8A8680" }}>Admin</span>

@@ -87,7 +87,7 @@ export function ProductActions({ product, onVariantChange }: Props) {
 
       {/* ── Price ── */}
       <div className="flex items-baseline gap-3">
-        <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 36, color: "#1C1C1A", lineHeight: 1 }}>
+        <span style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 36, color: "#1C1C1A", lineHeight: 1 }}>
           {formatPrice(product.basePrice)}
         </span>
         {product.basePrice && (

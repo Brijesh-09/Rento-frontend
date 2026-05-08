@@ -6,7 +6,7 @@ export default function NotFound() {
       style={{ backgroundColor: "#F7F4EF" }}>
       <p className="text-[10px] uppercase tracking-[0.25em] mb-4" style={{ color: "#C8913A" }}>404</p>
       <h1 className="mb-4" style={{
-        fontFamily: "'DM Serif Display', Georgia, serif",
+        fontFamily: "var(--font-dm-serif), Georgia, serif",
         fontSize: "clamp(2rem,5vw,3.5rem)",
         color: "#1C1C1A",
         lineHeight: 1.1,

@@ -66,7 +66,7 @@ export default function QuotePage() {
           style={{ backgroundColor: "#3D5A4A" }}>
           <CheckCircle style={{ width: 28, height: 28, color: "#F7F4EF" }} />
         </div>
-        <h1 className="mb-3" style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 32, color: "#1C1C1A" }}>
+        <h1 className="mb-3" style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 32, color: "#1C1C1A" }}>
           Quote Submitted!
         </h1>
         <p className="mb-2 text-sm" style={{ color: "#8A8680", lineHeight: 1.8 }}>
@@ -101,7 +101,7 @@ export default function QuotePage() {
             style={{ color: "#8A8680", letterSpacing: "0.1em" }}>
             <ArrowLeft style={{ width: 12, height: 12 }} /> Back to products
           </Link>
-          <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(2rem,4vw,3rem)", color: "#1C1C1A" }}>
+          <h1 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: "clamp(2rem,4vw,3rem)", color: "#1C1C1A" }}>
             Request a Quote
           </h1>
           <p className="mt-2 text-sm" style={{ color: "#8A8680" }}>
@@ -115,7 +115,7 @@ export default function QuotePage() {
         {/* ── Left: Cart ── */}
         <div>
           <div className="flex items-center justify-between mb-5">
-            <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 22, color: "#1C1C1A" }}>
+            <h2 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 22, color: "#1C1C1A" }}>
               Your Items
             </h2>
             <span className="text-xs uppercase tracking-wider" style={{ color: "#8A8680" }}>
@@ -126,7 +126,7 @@ export default function QuotePage() {
           {items.length === 0 ? (
             <div className="py-16 text-center" style={{ border: "1px dashed #D4C9B0" }}>
               <ShoppingBag style={{ width: 28, height: 28, color: "#D4C9B0", margin: "0 auto 12px" }} />
-              <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 18, color: "#8A8680" }}>
+              <p style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 18, color: "#8A8680" }}>
                 Your list is empty
               </p>
               <Link href="/products"
@@ -219,7 +219,7 @@ export default function QuotePage() {
 
           {/* Contact */}
           <div>
-            <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 22, color: "#1C1C1A", marginBottom: 20 }}>
+            <p style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 22, color: "#1C1C1A", marginBottom: 20 }}>
               Contact Details
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -242,7 +242,7 @@ export default function QuotePage() {
 
           {/* Event */}
           <div>
-            <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 22, color: "#1C1C1A", marginBottom: 20 }}>
+            <p style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 22, color: "#1C1C1A", marginBottom: 20 }}>
               Event Details
             </p>
             <div className="grid gap-4 sm:grid-cols-2">

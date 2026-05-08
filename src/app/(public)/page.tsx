@@ -99,7 +99,7 @@ export default async function HomePage() {
               <span className="w-5 h-px" style={{ backgroundColor: "#C8913A" }} />
               <span className="text-[10px] uppercase tracking-[0.22em]" style={{ color: "#C8913A" }}>{hero.tag}</span>
             </div>
-            <h1 className="mb-8" style={{ color: "#F7F4EF", fontFamily: "'DM Serif Display', Georgia, serif", letterSpacing: "-0.03em", lineHeight: 1.0 }}>
+            <h1 className="mb-8" style={{ color: "#F7F4EF", fontFamily: "var(--font-dm-serif), Georgia, serif", letterSpacing: "-0.03em", lineHeight: 1.0 }}>
               {hero.headline.map((line, i) => (
                 <span key={i} className={`block fade-up-${i + 1}`} style={{
                   fontSize: "clamp(3.2rem, 7.5vw, 7rem)",
@@ -131,7 +131,7 @@ export default async function HomePage() {
           <div className="max-w-7xl mx-auto px-8 py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
             {TRUST.map((t) => (
               <div key={t.label} className="flex flex-col items-center">
-                <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: "#C8913A", lineHeight: 1 }}>{t.n}</span>
+                <span style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 28, color: "#C8913A", lineHeight: 1 }}>{t.n}</span>
                 <span className="text-[10px] uppercase tracking-widest mt-1.5" style={{ color: "rgba(247,244,239,0.45)" }}>{t.label}</span>
               </div>
             ))}
@@ -154,7 +154,7 @@ export default async function HomePage() {
             <div className="px-6 md:px-10 flex items-end justify-between mb-8">
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] mb-2" style={{ color: "#8A8680" }}>What we offer</p>
-                <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(1.8rem,3.5vw,2.8rem)", color: "#1C1C1A", letterSpacing: "-0.02em" }}>
+                <h2 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: "clamp(1.8rem,3.5vw,2.8rem)", color: "#1C1C1A", letterSpacing: "-0.02em" }}>
                   Explore Categories
                 </h2>
               </div>
@@ -175,7 +175,7 @@ export default async function HomePage() {
                   </div>
                 </div>
                 <div className="relative p-4">
-                  <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 20, color: "#F7F4EF", lineHeight: 1.2 }}>All<br />Items</p>
+                  <p style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 20, color: "#F7F4EF", lineHeight: 1.2 }}>All<br />Items</p>
                   <p className="text-[10px] uppercase tracking-wider mt-1" style={{ color: "#8A8680" }}>
                     {categories.reduce((s: number, c: any) => s + (c._count?.products ?? 0), 0)} products
                   </p>
@@ -204,7 +204,7 @@ export default async function HomePage() {
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between">
                       <div>
-                        <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 22, color: "#F7F4EF", lineHeight: 1.2 }}>
+                        <p style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 22, color: "#F7F4EF", lineHeight: 1.2 }}>
                           {cat.name}
                         </p>
                         <p className="text-[10px] uppercase tracking-wider mt-1.5 flex items-center gap-1 transition-colors group-hover:text-[#F7F4EF]"
@@ -232,7 +232,7 @@ export default async function HomePage() {
             <div className="px-6 md:px-10 flex items-end justify-between mb-8">
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] mb-2" style={{ color: "#8A8680" }}>Hand-picked for you</p>
-                <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(1.8rem,3.5vw,2.8rem)", color: "#1C1C1A", letterSpacing: "-0.02em" }}>
+                <h2 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: "clamp(1.8rem,3.5vw,2.8rem)", color: "#1C1C1A", letterSpacing: "-0.02em" }}>
                   Trending Now
                 </h2>
               </div>
@@ -278,7 +278,7 @@ export default async function HomePage() {
                         <p className="text-xs line-clamp-2 leading-relaxed" style={{ color: "#8A8680" }}>{p.description}</p>
                       )}
                       <div className="flex items-center justify-between mt-auto pt-2" style={{ borderTop: "1px solid #EAE3D2" }}>
-                        <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 18, color: "#1C1C1A" }}>
+                        <span style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 18, color: "#1C1C1A" }}>
                           {p.basePrice ? `₹${p.basePrice.toLocaleString("en-IN")}` : "Get Quote"}
                         </span>
                         {p.variants?.[0]?.stock != null && (
@@ -302,7 +302,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="mb-10">
             <p className="text-[10px] uppercase tracking-[0.2em] mb-2" style={{ color: "#8A8680" }}>Curated for your needs</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(1.8rem,3.5vw,2.8rem)", color: "#1C1C1A" }}>
+            <h2 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: "clamp(1.8rem,3.5vw,2.8rem)", color: "#1C1C1A" }}>
               Featured Collections
             </h2>
           </div>
@@ -324,7 +324,7 @@ export default async function HomePage() {
                   <div className="max-w-md">
                     <p className="text-[10px] uppercase tracking-[0.2em] mb-5" style={{ color: banner.accent }}>{banner.eyebrow}</p>
                     <h3 className="mb-4" style={{
-                      fontFamily: "'DM Serif Display', Georgia, serif",
+                      fontFamily: "var(--font-dm-serif), Georgia, serif",
                       fontSize: "clamp(2rem,4vw,3rem)",
                       color: "#F7F4EF", lineHeight: 1.1, letterSpacing: "-0.02em",
                     }}>{banner.title}</h3>
@@ -350,7 +350,7 @@ export default async function HomePage() {
               <div className="absolute inset-0" style={{ background: "rgba(28,28,26,0.55)" }} />
               <div className="absolute inset-0 flex flex-col justify-end p-8">
                 <p className="text-[10px] uppercase tracking-widest mb-2" style={{ color: "#D4A59A" }}>Exhibition Ready</p>
-                <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: "#F7F4EF", lineHeight: 1.15 }}>
+                <h3 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 28, color: "#F7F4EF", lineHeight: 1.15 }}>
                   Display &<br />Octonorm Panels
                 </h3>
                 <Link href="/products" className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-wider hover:text-[#D4A59A] transition-colors"
@@ -370,7 +370,7 @@ export default async function HomePage() {
                 <div className="absolute inset-0 flex items-center px-8 justify-between">
                   <div>
                     <p className="text-[10px] uppercase tracking-widest mb-1" style={{ color: "#8A8680" }}>Stay cool</p>
-                    <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 22, color: "#F7F4EF" }}>Cooling & Fans</p>
+                    <p style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 22, color: "#F7F4EF" }}>Cooling & Fans</p>
                   </div>
                   <Link href="/products" className="w-8 h-8 rounded-full flex items-center justify-center"
                     style={{ backgroundColor: "rgba(247,244,239,0.15)", color: "#F7F4EF" }}>
@@ -387,7 +387,7 @@ export default async function HomePage() {
                 <div className="absolute inset-0 flex items-center px-8 justify-between">
                   <div>
                     <p className="text-[10px] uppercase tracking-widest mb-1" style={{ color: "rgba(247,244,239,0.7)" }}>Full catalogue</p>
-                    <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 22, color: "#F7F4EF" }}>View Everything</p>
+                    <p style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 22, color: "#F7F4EF" }}>View Everything</p>
                   </div>
                   <Link href="/products" className="w-8 h-8 rounded-full flex items-center justify-center"
                     style={{ backgroundColor: "rgba(28,28,26,0.3)", color: "#F7F4EF" }}>
@@ -405,7 +405,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="text-center mb-14">
             <p className="text-[10px] uppercase tracking-[0.22em] mb-3" style={{ color: "#8A8680" }}>Simple process</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(2rem,4vw,3rem)", color: "#F7F4EF" }}>
+            <h2 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: "clamp(2rem,4vw,3rem)", color: "#F7F4EF" }}>
               3 steps to your perfect event
             </h2>
           </div>
@@ -417,7 +417,7 @@ export default async function HomePage() {
             ].map((step, i) => (
               <div key={step.n} className="flex flex-col p-10" style={{ backgroundColor: "#1C1C1A" }}>
                 <div className="flex items-center justify-between mb-8">
-                  <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 48, color: "#2E2E2B", lineHeight: 1 }}>{step.n}</span>
+                  <span style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 48, color: "#2E2E2B", lineHeight: 1 }}>{step.n}</span>
                   <span className="text-3xl">{step.icon}</span>
                 </div>
                 <p className="font-medium mb-3 text-sm uppercase tracking-wider" style={{ color: "#F7F4EF", letterSpacing: "0.08em" }}>{step.title}</p>
@@ -439,7 +439,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="mb-10">
             <p className="text-[10px] uppercase tracking-[0.2em] mb-2" style={{ color: "#8A8680" }}>Client stories</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(1.8rem,3.5vw,2.8rem)", color: "#1C1C1A" }}>
+            <h2 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: "clamp(1.8rem,3.5vw,2.8rem)", color: "#1C1C1A" }}>
               Trusted by event professionals
             </h2>
           </div>
@@ -479,7 +479,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <p className="text-[10px] uppercase tracking-[0.25em] mb-5" style={{ color: "#C8913A" }}>Ready when you are</p>
           <h2 className="mb-5" style={{
-            fontFamily: "'DM Serif Display', Georgia, serif",
+            fontFamily: "var(--font-dm-serif), Georgia, serif",
             fontSize: "clamp(2.4rem,5vw,4.5rem)",
             color: "#F7F4EF", lineHeight: 1.05, letterSpacing: "-0.025em",
           }}>

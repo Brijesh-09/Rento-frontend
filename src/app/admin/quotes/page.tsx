@@ -59,7 +59,7 @@ export default function AdminQuotesPage() {
       <div className={cn("flex flex-col gap-4 overflow-y-auto", selected ? "hidden lg:flex lg:w-72 lg:shrink-0" : "flex-1")}>
         <div className="flex items-center justify-between">
           <div>
-            <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: "#1C1C1A" }}>Quotes</h1>
+            <h1 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 28, color: "#1C1C1A" }}>Quotes</h1>
             <p className="text-sm mt-1" style={{ color: "#8A8680" }}>{total} total</p>
           </div>
           <select value={filter} onChange={(e) => { setFilter(e.target.value); setPage(1); }}
@@ -77,7 +77,7 @@ export default function AdminQuotesPage() {
         ) : quotes.length === 0 ? (
           <div className="py-20 text-center" style={{ border: "1px dashed #D4C9B0" }}>
             <FileText style={{ width: 32, height: 32, color: "#D4C9B0", margin: "0 auto 12px" }} />
-            <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", color: "#8A8680" }}>No quotes found</p>
+            <p style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", color: "#8A8680" }}>No quotes found</p>
           </div>
         ) : (
           <div style={{ border: "1px solid #EAE3D2" }}>
@@ -131,7 +131,7 @@ export default function AdminQuotesPage() {
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "#8A8680", letterSpacing: "0.1em" }}>Quote Request</p>
-              <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 24, color: "#1C1C1A" }}>
+              <h2 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 24, color: "#1C1C1A" }}>
                 {selected.eventName || "Unnamed Event"}
               </h2>
               <p className="text-xs mt-1 font-mono" style={{ color: "#D4C9B0" }}>{selected.id}</p>
@@ -220,7 +220,7 @@ export default function AdminQuotesPage() {
                       )}
                     </div>
                     <div className="text-right">
-                      <p className="font-display text-lg" style={{ fontFamily: "'DM Serif Display', Georgia, serif", color: "#1C1C1A" }}>
+                      <p className="font-display text-lg" style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", color: "#1C1C1A" }}>
                         ×{item.quantity}
                       </p>
                     </div>

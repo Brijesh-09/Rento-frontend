@@ -227,7 +227,7 @@ export default async function ProductDetailPage({ params }: Props) {
             <div className="flex items-end justify-between mb-8">
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] mb-2" style={{ color: "#8A8680" }}>You may also like</p>
-                <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(1.6rem,3vw,2.4rem)", color: "#1C1C1A" }}>
+                <h2 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: "clamp(1.6rem,3vw,2.4rem)", color: "#1C1C1A" }}>
                   Related Items
                 </h2>
               </div>
@@ -253,7 +253,7 @@ export default async function ProductDetailPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-[10px] uppercase tracking-[0.2em] mb-2" style={{ color: "#8A8680" }}>Ready to book?</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(1.4rem,3vw,2.2rem)", color: "#F7F4EF" }}>
+            <h2 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: "clamp(1.4rem,3vw,2.2rem)", color: "#F7F4EF" }}>
               Add {product.name} to your quote
             </h2>
           </div>

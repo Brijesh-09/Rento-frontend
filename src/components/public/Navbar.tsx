@@ -21,7 +21,7 @@ export function PublicNavbar() {
       <header className="sticky top-0 z-50" style={{ backgroundColor: "#F7F4EF", borderBottom: "1px solid #D4C9B0" }}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="group">
-            <span className="font-display text-2xl tracking-tight" style={{ color: "#1C1C1A", fontFamily: "'DM Serif Display', Georgia, serif" }}>
+            <span className="font-display text-2xl tracking-tight" style={{ color: "#1C1C1A", fontFamily: "var(--font-dm-serif), Georgia, serif" }}>
               FURNR
             </span>
           </Link>
@@ -65,7 +65,7 @@ export function PublicNavbar() {
             {[{ label: "Home", href: "/" }, ...NAV].map((n) => (
               <Link key={n.href} href={n.href} onClick={() => setOpen(false)}
                 className="py-5 border-b text-3xl transition-colors hover:text-[#C8913A]"
-                style={{ fontFamily: "'DM Serif Display', Georgia, serif", borderColor: "#D4C9B0", color: "#1C1C1A" }}>
+                style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", borderColor: "#D4C9B0", color: "#1C1C1A" }}>
                 {n.label}
               </Link>
             ))}

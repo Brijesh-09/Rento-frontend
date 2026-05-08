@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"DM Serif Display"', 'Georgia', 'serif'],
-        sans:    ['"DM Sans"', 'system-ui', 'sans-serif'],
+        display: ['var(--font-dm-serif)', 'Georgia', 'serif'],
+        sans:    ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
       },
       colors: {
         cream:      '#F7F4EF',

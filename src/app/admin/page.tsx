@@ -58,7 +58,7 @@ export default function AdminDashboard() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: "#1C1C1A", letterSpacing: "-0.02em" }}>
+          <h1 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 28, color: "#1C1C1A", letterSpacing: "-0.02em" }}>
             Dashboard
           </h1>
           <p className="text-sm mt-1" style={{ color: "#8A8680" }}>Here's an overview of your catalogue and incoming requests.</p>
@@ -82,7 +82,7 @@ export default function AdminDashboard() {
               <Icon style={{ width: 18, height: 18, color: accent }} />
             </div>
             <div className="flex-1">
-              <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 26, color: "#1C1C1A", lineHeight: 1 }}>{value}</p>
+              <p style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 26, color: "#1C1C1A", lineHeight: 1 }}>{value}</p>
               <p className="text-xs mt-1 uppercase tracking-wider" style={{ color: "#8A8680" }}>{label}</p>
             </div>
             <ArrowRight style={{ width: 14, height: 14, color: "#D4C9B0" }}
@@ -94,7 +94,7 @@ export default function AdminDashboard() {
       {/* Recent quotes */}
       <div style={{ backgroundColor: "#FDFAF6", border: "1px solid #EAE3D2" }}>
         <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: "1px solid #EAE3D2" }}>
-          <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 18, color: "#1C1C1A" }}>
+          <h2 style={{ fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 18, color: "#1C1C1A" }}>
             Recent Quotes
           </h2>
           <Link href="/admin/quotes" className="text-xs uppercase tracking-wider transition-colors hover:text-[#C8913A]"

@@ -140,7 +140,7 @@ export function ProductCard({ product }: { product: Product }) {
 
         {/* Price + stock */}
         <div className="flex items-baseline justify-between mt-auto">
-          <span style={{ color: "#1C1C1A", fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 18 }}>
+          <span style={{ color: "#1C1C1A", fontFamily: "var(--font-dm-serif), Georgia, serif", fontSize: 18 }}>
             {formatPrice(product.basePrice)}
           </span>
           {selectedVariant?.stock != null && (
